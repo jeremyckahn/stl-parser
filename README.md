@@ -1,6 +1,8 @@
 # stl-parser
 
-Minimal, practical boilerplate for writing Node-powered CLI tools.  By default it processes text in a UNIX-friendly way.
+This is a simplified STL file parser.
+
+Note: The development toolchain for this project is a little out of date, but functional. It was based off of https://github.com/jeremyckahn/node-cli-boilerplate. Minimally I'd like to use Jest, but for now the focus is on implementing an STL parser.
 
 ## Usage
 
@@ -13,29 +15,6 @@ $: npm install && ./bin/cli.js --help
 
     -h, --help     output usage information
     -V, --version  output the version number
-```
-
-## Getting started
-
-Here's a handy snippet you can add to your `.bash_profile` to create new tools easily:
-
-```
-function new_cli_tool () {
-  if [ -z "$1" ];
-  then
-    "Must specify a project name as the first argument"
-    return
-  else
-    git clone --depth=1 https://github.com/jeremyckahn/stl-parser.git "$1"
-    cd "$1" || exit 1
-    rm -rf .git
-    find . -type f -exec sed -i "" "s/stl-parser/$1/g" {} \;
-    git init
-    git add --all
-    git commit -m "Initial commit"
-    npm install
-  fi
-}
 ```
 
 ## License
