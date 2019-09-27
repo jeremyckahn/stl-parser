@@ -2,7 +2,7 @@
 
 This is a simplified STL file parser.
 
-Note: The development toolchain for this project is a little out of date, but functional. It was based off of https://github.com/jeremyckahn/node-cli-boilerplate. Minimally I'd like to use Jest, but for now the focus is on implementing an STL parser.
+Note: The development toolchain for this project is a little out of date, but functional. It was based off of https://github.com/jeremyckahn/node-cli-boilerplate.
 
 ## Usage
 
