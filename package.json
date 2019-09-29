@@ -24,6 +24,7 @@
     "prepush": "npm test && npm run lint",
     "prettier": "prettier 'lib/**/*.js' --write",
     "preversion": "npm test",
+    "postinstall": "npm run build",
     "postversion": "git push && git push --tags && npm publish",
     "exec": "./bin/cli.js"
   },
