@@ -2,8 +2,8 @@
 
 const commander = require('commander');
 const getStdin = require('get-stdin');
-const { readFileSync, writeFileSync } = require('fs');
-const lib = require('../dist/index').default;
+const { readFileSync } = require('fs');
+const StlParser = require('../dist/index').default;
 
 const { version } = require('../package.json');
 
@@ -15,6 +15,11 @@ commander
 
 const { args: files } = commander;
 
+const processText = text => {
+  const parser = new StlParser(text);
+  process.stdout.write(parser.toString());
+};
+
 getStdin().then(stdin => {
   if (!files.length && !stdin) {
     commander.outputHelp();
@@ -22,16 +27,10 @@ getStdin().then(stdin => {
   }
 
   if (stdin) {
-    process.stdout.write(
-      lib(stdin)
-    );
+    processText(stdin);
   } else {
     files.forEach(file => {
-      process.stdout.write(
-        lib(
-          readFileSync(file, 'utf8')
-        )
-      );
+      processText(readFileSync(file, 'utf8'));
     });
   }
 });
