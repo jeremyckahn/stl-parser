@@ -35,7 +35,7 @@ I decided to optimize for time complexity over space complexity, DRYness, or loo
 ## Areas for improvement
 
 - I could have consolidated the `while` loops in `parseStl` and `parseSolid`, but that would result in a rather unwieldy monolith that would be a bit harder to test.
-- Memory usage could be better. I preferred readability over memory optimization for this project. The result is suboptimal garbage creation.
+- Memory usage could be better. I preferred readability over memory optimization for this project. The result is suboptimal garbage creation. Additionally, this program does not consider input size bounds. For this program to support very large inputs (like a file with millions of triangles), it would need to read input in predefined segment sizes and process each one at a time.
 - This code makes assumptions about the format of the input in the interest of performance (for example, that every `loop` has exactly three `vertex` lines). I'm not familiar enough the STL file format to know if this is brittle or not.
 - The methods are idempotent, but tightly coupled. They make a lot of assumptions about how they will be used in the interest of performance. The API would have to be revisited for this to be a useful library.
 
