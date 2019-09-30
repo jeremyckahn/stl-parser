@@ -19,7 +19,7 @@ npm install
 You can provide any valid STL text file to this CLI tool, but you can easily test it out with the included `lib/fixtures/moon.stl` file:
 
 ```
-$: npm run exec -- lib/fixtures/moon.stl
+npm run exec -- lib/fixtures/moon.stl
 ```
 
 ## Run the tests
